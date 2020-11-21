@@ -20,7 +20,7 @@ data = (
         .groupby("stationid")
         .apply(lambda g: g.to_dict(orient="records"))
         .reset_index(name="detectors"),
-        how="left", left_on="stationid", right_on="stationid")
+        how="left", on="stationid")
     .to_json(orient="records")
 )
 # print(data)
