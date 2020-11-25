@@ -10,7 +10,7 @@ import json
 stationsdf = pd.read_csv("freeway_stations.csv")
 detectorsdf = pd.read_csv("freeway_detectors.csv")
 highwaysdf = pd.read_csv("highways.csv")
-loopdf = pd.read_csv("freeway_loopdata_onehour.csv", parse_dates=['starttime'])
+loopdf = pd.read_csv("freeway_loopdata.csv", parse_dates=['starttime'])
 
 # clean loop data by removing empty speeds
 cleanloopdf = loopdf[loopdf['speed'].notna()]
@@ -45,5 +45,5 @@ data = (
 )
 
 # write to json
-data.to_json(r'clean_onehour.json', orient='records',
+data.to_json(r'clean_all.json', orient='records',
              indent=4, date_format="iso")
