@@ -12,8 +12,9 @@ detectorsdf = pd.read_csv("freeway_detectors.csv")
 highwaysdf = pd.read_csv("highways.csv")
 loopdf = pd.read_csv("freeway_loopdata.csv", parse_dates=['starttime'])
 
-# clean loop data by removing empty speeds
+# clean loop data by removing null/0 speeds
 cleanloopdf = loopdf[loopdf['speed'].notna()]
+cleanloopdf = cleanloopdf[cleanloopdf['speed'] > 0]
 
 
 # keeping only relevant columns for detectors
