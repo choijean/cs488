@@ -1,5 +1,8 @@
 *.csv
 env/
 __pycache__
-clean_all.json
+*.json
+*.json.zip
 *.txt
+convert_pandas.py
+convert.py
